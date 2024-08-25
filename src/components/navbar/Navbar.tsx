@@ -8,14 +8,13 @@ import { MdClose } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Container from "../container/Container";
 const styles =
-  "relative before:content-[' '] before:w-[80%] before:h-1 before:bg-amber-700 before:scale-0 before:left-0 before:duration-500 before:transition-all before:bottom-[-4px] before:absolute hover:before:scale-100 before:origin-left";
+  "relative before:content-[' '] before:w-[80%] before:h-1 before:bg-accent-700 before:scale-0 before:left-0 before:duration-500 before:transition-all before:bottom-[-4px] before:absolute  before:origin-left";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <header
-      className=" fixed w-full py-5 h-
-      [80px] z-40 text-white
+      className=" fixed w-full py-5 z-40 text-whitehover:before:scale-100
      bg-primary-700 gap-5"
     >
       <Container>
@@ -27,10 +26,10 @@ const Navbar = () => {
             {showMenu ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
           </div>
           <div
-            className="text-3xl font-bold z-10
+            className="text-3xl text-primary-500 font-bold z-10
         "
           >
-            MIKE
+            AENON
             <span className=" text-accent-500">SHOP</span>
           </div>
           <form className="flex">

@@ -1,9 +1,9 @@
 import React from "react";
 
-interface ContainerProps {
+interface containerProps {
   children: React.ReactNode;
 }
-const Container = ({ children }: ContainerProps) => {
+const Container = ({ children }: containerProps) => {
   return <div className=" container">{children}</div>;
 };
 

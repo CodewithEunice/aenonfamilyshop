@@ -65,7 +65,7 @@ const LatestProducts = () => {
       <Container>
         <div className="">
           <h2 className="text-3xl mb-2 capitalize">Latest Products</h2>
-          <div className="flex justify-between items-center">
+          <div className="relative">
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={20}
@@ -93,7 +93,7 @@ const LatestProducts = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="flex items-center justify-center">
+            <div className="flex  justify-center">
               <div className="swiper-pagination-latestProduct"></div>
             </div>
             <div

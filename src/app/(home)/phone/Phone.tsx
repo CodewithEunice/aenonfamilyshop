@@ -1,6 +1,19 @@
+"use client";
 import React from "react";
 import Container from "@/components/container/Container";
 import Product from "@/components/product/Product";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+
+import { Navigation, Pagination } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const phones = [
   {
@@ -54,10 +67,48 @@ const Phone = () => {
     <section className="py-5">
       <Container>
         <h2 className="text-3xl mb-2 capitalize">Phones</h2>
-        <div className="flex justify-between gap-5">
-          {phones.map((item) => (
-            <Product key={item.id} item={item} />
-          ))}
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation={{
+              nextEl: ".swiper-buttton-next-phones",
+              prevEl: ".swiper-button-prev-phones",
+            }}
+            pagination={{
+              el: ".swiper-pagination-phones",
+              type: "bullets",
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1200: {
+                slidesPerView: 4,
+              },
+            }}
+          >
+            {phones.map((item) => (
+              <SwiperSlide key={item.id}>
+                <Product item={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="flex  justify-center">
+            <div className="swiper-pagination-phones"></div>
+          </div>
+          <div
+            className="w-full h-full flex justify-between items-center
+             absolute top-0 left-0 z-20"
+          >
+            <div className="swiper-button-prev-phones cursor-pointer ">
+              <MdOutlineKeyboardArrowLeft size={40} />
+            </div>
+            <div className="swiper-button-next-phones cursor-pointer ">
+              <MdOutlineKeyboardArrowRight size={40} />
+            </div>
+          </div>
         </div>
       </Container>
     </section>

@@ -152,7 +152,7 @@ const HotProducts = () => {
             >
               {products.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <Product item={item} showBlackButton objectCover />
+                  <Product item={item} showBlackButton objectContain />
                 </SwiperSlide>
               ))}
             </Swiper>

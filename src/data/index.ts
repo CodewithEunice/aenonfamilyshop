@@ -40,7 +40,7 @@ export const products = [
     img: "https://cdn.mos.cms.futurecdn.net/zsKB9MX9rSBdNhJ4De9GmK-970-80.jpg.webp",
   },
   {
-    id: 5,
+    id: 5, 
     brand: "Apple",
     price: "800",
     cat: "Watch",
